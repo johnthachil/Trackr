@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>| MusicApp</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="css/vendor/bootstrap.min.css" rel="stylesheet">
+    <link href="http://fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css">
+    <link href="css/flat-ui.css" rel="stylesheet">
+    <link href="css/main.css" rel="stylesheet">
+    <link href="css/spinner.css" rel="stylesheet">
+    <link href="css/animate.min.css" rel="stylesheet">
+
+
+    <link rel="shortcut icon" href="img/favicon.ico">
+  </head>
+  <body>
+
+<!-- NAVBAR START -->
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">Music App</a>
+        </div>
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          <ul class="nav navbar-nav">
+
+          </ul>
+          <ul class="nav navbar-nav navbar-right">
+            <li class=""><a href="#">Track</a></li>
+            <li><a href="#">Artist</a></li>
+          </ul>
+        </div><!-- /.navbar-collapse -->
+      </div><!-- /.container-fluid -->
+    </nav>
+    <br><br><br><br>
+<!-- NAVBAR START -->
+
+    <div class="container">
+      <form id="searchform">
+        <div class="form-group">
+          <input type="text"  class="mybox "id="trackinput" placeholder="Track Name">
+        </div>
+        <button type="submit" id="submitbtn" class="btn btn-default">Submit</button>
+      </form>
+    </div>
+    <br><br>
+    <div class="container">
+      <div class="row">
+        <div class="waitinginfo">
+          
+
+        </div>
+        <div class="fullinfo">
+
+        </div>
+      </div>
+    </div>
+
+    <!-- jQuery (necessary for Flat UI's JavaScript plugins) -->
+    <script src="js/wow.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script src="js/flat-ui.min.js"></script>
+    <script src="js/main.js"></script>
+    <!-- <script src="js/wow.min.js"></script> -->
+    <script>
+      new WOW().init();
+    </script>
+
+  </body>
+</html>

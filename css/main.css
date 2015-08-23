@@ -1,0 +1,93 @@
+
+.navbar-brand{
+  font-family: "Raleway", "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: 100;
+  font-size: 2em;
+}
+
+
+.navbar-right a{
+  font-size: 4.2em;
+
+}
+
+.mybox{
+  width: 100%;
+  border-right-style: none;
+  border-left-style: none;
+  border-top-style: none;
+  border-bottom: 1px solid #3b526a;
+  outline: 0;
+  cursor: pointer;
+  padding-bottom: 10px;
+  text-align: center;
+  font-size: 2em;
+
+
+}
+
+.mybox:focus{
+  border-bottom: 2px solid #34495e;
+
+}
+.artist{
+  padding-bottom: 10px;
+}
+
+.artistinfo h3,h4{
+  font-family: "Raleway", "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: 100;
+}
+.artistinfo h3{
+  font-weight: 200;
+
+}
+.addinfo{
+  padding-top: 1%;
+}
+@media (max-width: 600px) {
+  .addinfo{
+    padding-top: 3%;
+  }
+  .artistinfo h3{
+    font-size:30px;
+  }
+  .artistinfo h4{
+    font-size:20px;
+  }
+}
+
+@media (max-width: 600px) {
+  .fullinfo{
+    padding-left: 3%;
+    padding-right: 3%;
+
+
+  }
+  .navbar-header{
+    -webkit-box-shadow: 0px 2px 4px -1px rgba(0,0,0,0.67);
+  -moz-box-shadow: 0px 2px 4px -1px rgba(0,0,0,0.67);
+  box-shadow: 0px 2px 4px -1px rgba(0,0,0,0.67);
+  }
+
+}
+@media (max-width: 700px) {
+  .addinfo{
+    padding-top: 3%;
+  }
+
+}
+
+.img-responsive{
+  border: 5px solid white;
+  -webkit-box-shadow: 0px 0px 3px 0px rgba(0,0,0,0.58);
+  -moz-box-shadow: 0px 0px 3px 0px rgba(0,0,0,0.58);
+  box-shadow: 0px 0px 3px 0px rgba(0,0,0,0.58);
+}
+#submitbtn{
+  display: none;
+}
+
+.artist{
+    /*border-bottom: 0.5px solid #3d566e;*/
+}
