@@ -203,6 +203,9 @@ $("#topform").on('submit',function(e) {
       type: 'GET',
       error: function() { console.log('Uh Oh!'); },
       beforeSend: function() {
+        $('html, body').animate({
+          scrollTop: $(".fullinfo").offset().top
+        }, 1000);
         $("#trackinput").blur();
         $(".fullinfo").empty();
         $(".waitinginfo").empty();
