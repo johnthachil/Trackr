@@ -1,4 +1,38 @@
 $( document ).ready(function() {
+    console.log("Jquery Loaded");
+    //smooth-Scroll
+    var offset = 300,
+		//browser window scroll (in pixels) after which the "back to top" link opacity is reduced
+		offset_opacity = 4000,
+		//duration of the top scrolling animation (in ms)
+		scroll_top_duration = 700,
+		//grab the "back to top" link
+		$back_to_top = $('.cd-top');
+
+	//hide or show the "back to top" link
+	$(window).scroll(function(){
+		( $(this).scrollTop() > offset ) ? $back_to_top.addClass('cd-is-visible') : $back_to_top.removeClass('cd-is-visible cd-fade-out');
+		if( $(this).scrollTop() > offset_opacity ) {
+			$back_to_top.addClass('cd-fade-out');
+		}
+	});
+
+	//smooth scroll to top
+	$back_to_top.on('click', function(event){
+		event.preventDefault();
+		$('body,html').animate({
+			scrollTop: 0 ,
+		 	}, scroll_top_duration
+		);
+	});
+
+
+  //scroll end
+
+
+
+
+  //input start
     $(function() {
     $("[autofocus]").on("focus", function() {
       if (this.setSelectionRange) {
@@ -10,7 +44,8 @@ $( document ).ready(function() {
       this.scrollTop = 999999;
     }).focus();
   });
-  console.log("hellow");
+  //input end
+
   query = "http://api.musixmatch.com/ws/1.1/chart.tracks.get?apikey=26056a324e4e6a894782472bedd07d94&format=JSONP&callback=?&country=us"
   $.ajax({
     url:query,
@@ -35,7 +70,7 @@ $( document ).ready(function() {
       $("#trackinput").val('');
       $(".waitinginfo").empty();
       $(".fullinfo").empty();
-      $(".fullinfo").append('<h2>TOP CHARTS</h2>');
+      $(".fullinfo").append('<h2 class="charttop">TOP CHARTS</h2>');
       $.each(data['message']['body']['track_list'],function(i,artist) {
         console.log(artist['track']['album_name']);
         if (artist['track']['album_coverart_500x500']!="") {
@@ -47,7 +82,7 @@ $( document ).ready(function() {
         }
         $(".fullinfo").append('<div class="singleitem">'+
         '<div class="row">'+
-        '<div class="col-xs-6 col-md-4 eachitem wow fadeIn">'+
+        '<div class="col-xs-6 col-md-4 eachitem wow slideInLeft">'+
         '<img src="'+imgtag+'" class="img-responsive" alt="Responsive image">'+
         '</div>'+
         '<div class="col-xs-12 col-md-8 artist wow fadeIn">'+
@@ -69,14 +104,25 @@ $( document ).ready(function() {
         '          <td></td>'+
         '          <td><a href="'+artist['track']['track_share_url']+'">Click Here</a></td>'+
         '        </tr>'+
+        '        <tr>'+
+        '          <td><a href=""  data-toggle="modal" style="color:#e74c3c;" data-target="#myModal">More</a></td>'+
+        '          <td></td>'+
+        '          <td></td>'+
+        '        </tr>'+
         '      </tbody>'+
         '    </table>'+
         '  </div>'+
         '</div>'+
         '  </div>'+
         '  </div>'+
-        '<br><br>'+
+        '<br>'+
+        '<div class="row">'+
+        // '  <div class="col-md-12"><iframe width="100%" height="150" scrolling="yes" frameborder="yes" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/194674830&amp;auto_play=false&amp;hide_related=false&amp;show_comments=false&amp;show_user=false&amp;show_reposts=false&amp;visual=false"></iframe></div>'+
+        '<br>'+
+        '</div>'+
         '  </div>'
+        // '<br>'
+
 
 
       )
@@ -152,7 +198,7 @@ $( document ).ready(function() {
             }
             $(".fullinfo").append('<div class="singleitem">'+
             '<div class="row">'+
-            '<div class="col-xs-6 col-md-4 eachitem wow fadeIn">'+
+            '<div class="col-xs-6 col-md-4 eachitem wow slideInLeft">'+
             '<img src="'+imgtag+'" class="img-responsive" alt="Responsive image">'+
             '</div>'+
             '<div class="col-xs-12 col-md-8 artist wow fadeIn">'+
@@ -203,10 +249,7 @@ $("#topform").on('submit',function(e) {
       type: 'GET',
       error: function() { console.log('Uh Oh!'); },
       beforeSend: function() {
-        $('html, body').animate({
-          scrollTop: $(".fullinfo").offset().top
-        }, 1000);
-        $("#trackinput").blur();
+        $("#topforminput").blur();
         $(".fullinfo").empty();
         $(".waitinginfo").empty();
         $(".waitinginfo").append(
@@ -232,7 +275,7 @@ $("#topform").on('submit',function(e) {
           }
           $(".fullinfo").append('<div class="singleitem">'+
           '<div class="row">'+
-          '<div class="col-xs-6 col-md-4 eachitem wow fadeIn">'+
+          '<div class="col-xs-6 col-md-4 eachitem wow slideInLeft">'+
           '<img src="'+imgtag+'" class="img-responsive" alt="Responsive image">'+
           '</div>'+
           '<div class="col-xs-12 col-md-8 artist wow fadeIn">'+
