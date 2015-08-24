@@ -1,4 +1,3 @@
-# Movie-Grid
-Movie Showcase
-
+# Trackr
+Easy Lyric Finder
 http://johnthachil.github.io/tracks
