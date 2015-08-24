@@ -3,7 +3,7 @@ $( document ).ready(function() {
     //smooth-Scroll
     var offset = 300,
 		//browser window scroll (in pixels) after which the "back to top" link opacity is reduced
-		offset_opacity = 4000,
+		offset_opacity = 1200,
 		//duration of the top scrolling animation (in ms)
 		scroll_top_duration = 700,
 		//grab the "back to top" link
@@ -27,7 +27,7 @@ $( document ).ready(function() {
 	});
 
 
-  //scroll end
+
 
 
 
@@ -104,25 +104,14 @@ $( document ).ready(function() {
         '          <td></td>'+
         '          <td><a href="'+artist['track']['track_share_url']+'">Click Here</a></td>'+
         '        </tr>'+
-        '        <tr>'+
-        '          <td><a href=""  data-toggle="modal" style="color:#e74c3c;" data-target="#myModal">More</a></td>'+
-        '          <td></td>'+
-        '          <td></td>'+
-        '        </tr>'+
         '      </tbody>'+
         '    </table>'+
         '  </div>'+
         '</div>'+
         '  </div>'+
         '  </div>'+
-        '<br>'+
-        '<div class="row">'+
-        // '  <div class="col-md-12"><iframe width="100%" height="150" scrolling="yes" frameborder="yes" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/194674830&amp;auto_play=false&amp;hide_related=false&amp;show_comments=false&amp;show_user=false&amp;show_reposts=false&amp;visual=false"></iframe></div>'+
-        '<br>'+
-        '</div>'+
+        '<br><br>'+
         '  </div>'
-        // '<br>'
-
 
 
       )
